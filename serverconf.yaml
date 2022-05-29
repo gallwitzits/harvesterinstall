@@ -1,35 +1,18 @@
-server_url: https://someserver:8443
-token: TOKEN_VALUE
+
+token: gallwitzits
 os:
-  ssh_authorized_keys:
-    - ssh-rsa AAAAB3NzaC1yc2EAAAADAQAB...
-    - github:username
-  write_files:
-  - encoding: ""
-    content: test content
-    owner: root
-    path: /etc/test.txt
-    permissions: '0755'
-  hostname: myhost
+  ssh_authorized_keys:ssh-dss AAAAB3NzaC1kc3MAAACBANVS4JXMi7I9hDDKSnywsPU83EiwrCROXX/PStApIOrSy8w2whgqyxDr8Ny26Q/0P4r93SnZrsv9OazoZUTbZRPaifo6azqouWu5EwSxHXMbPPDU7Bi3k1TlWwMCHELwnMqBebCwyWLt+S8PWRrp7/rkSD+lnMapTLhC3yCj97jbAAAAFQD9Q3ScQys54Af/S7dyvwPZ5sGF8wAAAIEAtJ7/ePLOo13C53Y+fVbOsGBm/CUQLZO8j/F+t/mR2WaPTyuNLixbv9Z9zEHqTDwx3hUFnUefmQr4e7nR4SjswuSTUxPCLMIIgX39veDEnq1iwWCMFVz6vMep+eXob7Z6jw7kzoEUhEWsbIJjzF97aeaMLpMpj5wmR2EFBj4F8UgAAACACRzq7hFNODcmZqGJDu3SvBt0bgt8e8trFPuxAGnE4e6QUA9KZ2HTaYDrcx2JatIUfo/6Y1TcYGhLDe5+K81ZBQs7QMw0bpf372tgVuh4jxQJ80FJqGY1ifbc6QRHwr+K5aUqO7er4v38vW17DRL9szJdH62RcJPjjxeA5n02q3g= ottmar
+  hostname: host1
   modules:
     - kvm
     - nvme
-  sysctls:
-    kernel.printk: "4 4 1 7"
-    kernel.kptr_restrict: "1"
   dns_nameservers:
     - 8.8.8.8
     - 1.1.1.1
   ntp_servers:
     - 0.suse.pool.ntp.org
     - 1.suse.pool.ntp.org
-  password: rancher
-  environment:
-    http_proxy: http://myserver
-    https_proxy: http://myserver
-  labels:
-    foo: bar
-    mylabel: myvalue
+  password: supersecure
 install:
   mode: create
   networks:
